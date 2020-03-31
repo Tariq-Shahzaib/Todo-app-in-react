@@ -1,0 +1,9 @@
+.done {
+  text-decoration-line: line-through;
+}
+
+divv {
+  height: 200px;
+  width: 50%;
+  background-color: black;
+}
