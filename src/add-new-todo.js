@@ -18,6 +18,7 @@ const AddNewTodo = () => {
           ...previos,
           { text: text, id: todos.length, done: true }
         ]);
+    console.log(todos);
   };
   return (
     <div>

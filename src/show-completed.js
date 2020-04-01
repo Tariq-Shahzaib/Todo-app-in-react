@@ -1,20 +1,27 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
+import Todo from "./todo";
 import { TodoContext } from "./todoContext";
 const CompletedTodos = () => {
   const [todos, setTodo] = useContext(TodoContext);
 
   const handleCompleted = () => {
-    const newTodos = [...todos];
-    const filtredTodos = newTodos.filter(todo => todo.done === false);
-    setTodo(filtredTodos);
+    console.log(todos);
   };
 
   return (
     <div className="d-flex justify-content-center mb-4 mt-4">
-      <button className="btn btn-danger btn-sm" onClick={handleCompleted}>
-        {" "}
-        Completed{" "}
-      </button>
+      <div className="mt-4 ">
+        {todos.map(todo =>
+          todo.done === false ? (
+            <Todo
+              id={todo.id}
+              text={todo.text}
+              done={todo.done}
+              key={todo.id}
+            />
+          ) : null
+        )}
+      </div>
     </div>
   );
 };
